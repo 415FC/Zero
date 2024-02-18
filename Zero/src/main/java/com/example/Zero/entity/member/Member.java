@@ -36,7 +36,7 @@ public class Member {
 	@Column(name = "created_at")
 	private Date createdAt;
 	
-	@Column(name = "created_at")
+	@Column(name = "updated_at")
 	private Date updatedAt;
 	
 	@Column(name = "is_deleted")

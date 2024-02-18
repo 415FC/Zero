@@ -3,11 +3,15 @@ package com.example.Zero.entity.post;
 import java.sql.Clob;
 import java.sql.Date;
 
+import com.example.Zero.entity.member.Member;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,7 +27,8 @@ public class Post {
 	@Column(name = "post_id")
 	private Long postId;
 	
-	@Column(name = "member_id")
+	@ManyToOne(targetEntity = Member.class)
+	@JoinColumn(name="member_id", referencedColumnName = "member_id")
 	private Long memberId;
 
 	@Column(name = "post_title")
